@@ -3,7 +3,11 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
-import svelte from '@astrojs/svelte';
+import mdx from '@astrojs/mdx';
+
+import sitemap from '@astrojs/sitemap';
+
+import UnoCSS from 'unocss/astro';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +15,9 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [svelte()]
+  integrations: [
+    mdx(), 
+    sitemap(),
+    UnoCSS()
+  ]
 });
